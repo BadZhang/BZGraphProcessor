@@ -1,0 +1,14 @@
+{
+    "name": "com.devagame.BZGraphProcessor",
+    "displayName": "BZGraphProcessor",
+    "author": { "name": "BadZhang, Inc.", "url": "https://github.com/badzhang/BZGraphProcessor" },
+    "version": "1.0.0",
+    "unity": "2022.3",
+    "description": "",
+    "keywords": ["Graph", "Processor", "BZGraphProcessor", "GraphProcessor"],
+    "license": "MIT",
+    "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui":"1.0.0"
+    }
+}
