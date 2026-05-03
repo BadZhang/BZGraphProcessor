@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using BZGraphProcessor.Shared;
+
+namespace BZGraphProcessor
+{
+    [ViewModel(typeof(Group))]
+    public class GroupProcessor : ViewModel, IGraphElementProcessor, IGraphElementProcessor_Scope
+    {
+        #region Fileds
+
+        private Group m_Model;
+        private Type m_ModelType;
+
+        private BaseGraphProcessor m_Owner;
+
+        #endregion
+
+        #region Property
+
+        public Group Model
+        {
+            get { return m_Model; }
+        }
+
+        object IGraphElementProcessor.Model
+        {
+            get { return m_Model; }
+        }
+
+        public Type ModelType
+        {
+            get { return m_ModelType; }
+        }
+
+        Type IGraphElementProcessor.ModelType
+        {
+            get { return m_ModelType; }
+        }
+
+        public long ID
+        {
+            get { return Model.id; }
+        }
+
+        public IReadOnlyList<long> Nodes
+        {
+            get { return Model.nodes; }
+        }
+
+        public BaseGraphProcessor Owner
+        {
+            get { return m_Owner; }
+            internal set { m_Owner = value; }
+        }
+
+        public string GroupName
+        {
+            get => Model.groupName;
+            set => SetFieldValue(ref Model.groupName, value, nameof(Model.groupName));
+        }
+
+        public InternalVector2Int Position
+        {
+            get => Model.position;
+            set => SetFieldValue(ref Model.position, value, nameof(Model.position));
+        }
+
+        public InternalColor BackgroundColor
+        {
+            get => Model.backgroundColor;
+            set => SetFieldValue(ref Model.backgroundColor, value, nameof(Model.backgroundColor));
+        }
+
+        #endregion
+
+        public GroupProcessor(Group model)
+        {
+            this.m_Model = model;
+            this.m_ModelType = model.GetType();
+            this.m_Model.position = model.position == default ? InternalVector2Int.zero : model.position;
+        }
+
+        internal void NotifyNodeAdded(BaseNodeProcessor node)
+        {
+            Owner.GraphEvents.Publish(new AddNodesToGroupEventArgs(this, node));
+        }
+
+        internal void NotifyNodeRemoved(BaseNodeProcessor node)
+        {
+            Owner.GraphEvents.Publish(new RemoveNodesFromGroupEventArgs(this, node));
+        }
+    }
+}

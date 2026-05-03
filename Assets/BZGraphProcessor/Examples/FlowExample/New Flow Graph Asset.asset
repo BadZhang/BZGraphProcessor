@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d16cf4816bca545aa0215113b5fe31, type: 3}
+  m_Name: New Flow Graph Asset
+  m_EditorClassIdentifier: 
+  data:
+    zoom: 1.3225
+    pan:
+      x: 380
+      y: 28
+    nodes:
+    - rid: 6279154847130583314
+    - rid: 6279154847130583315
+    - rid: 6279154847130583316
+    - rid: 6279154847130583317
+    - rid: 6279154847130583318
+    connections:
+    - rid: 6279154847130583319
+    - rid: 6279154847130583320
+    - rid: 6279154847130583321
+    - rid: 6279154847130583322
+    groups: []
+    notes: []
+    startNodeID: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 6279154847130583314
+      type: {class: BTStartNode, ns: , asm: BZGraphProcessor}
+      data:
+        id: 0
+        position:
+          x: 112
+          y: 80
+        comment: 
+        CD: 0
+    - rid: 6279154847130583315
+      type: {class: BTMotionNode, ns: , asm: BZGraphProcessor}
+      data:
+        id: 777079884584321024
+        position:
+          x: 320
+          y: 80
+        comment: 
+        configmotionName: 
+        resPath: 
+    - rid: 6279154847130583316
+      type: {class: BTMotionNode, ns: , asm: BZGraphProcessor}
+      data:
+        id: 777079891970490368
+        position:
+          x: 48
+          y: 256
+        comment: 
+        configmotionName: 
+        resPath: 
+    - rid: 6279154847130583317
+      type: {class: BTMotionNode, ns: , asm: BZGraphProcessor}
+      data:
+        id: 777079892570275840
+        position:
+          x: 320
+          y: 256
+        comment: 
+        configmotionName: 
+        resPath: 
+    - rid: 6279154847130583318
+      type: {class: BTMotionNode, ns: , asm: BZGraphProcessor}
+      data:
+        id: 777079893178449920
+        position:
+          x: 659
+          y: 193
+        comment: 
+        configmotionName: 
+        resPath: 
+    - rid: 6279154847130583319
+      type: {class: BaseConnection, ns: BZGraphProcessor, asm: BZGraphProcessor}
+      data:
+        fromNode: 777079891970490368
+        fromPort: Flow-Out
+        toNode: 777079892570275840
+        toPort: Flow-In
+    - rid: 6279154847130583320
+      type: {class: BaseConnection, ns: BZGraphProcessor, asm: BZGraphProcessor}
+      data:
+        fromNode: 777079892570275840
+        fromPort: Flow-Out
+        toNode: 777079893178449920
+        toPort: Flow-In
+    - rid: 6279154847130583321
+      type: {class: BaseConnection, ns: BZGraphProcessor, asm: BZGraphProcessor}
+      data:
+        fromNode: 0
+        fromPort: Flow-Out
+        toNode: 777079884584321024
+        toPort: Flow-In
+    - rid: 6279154847130583322
+      type: {class: BaseConnection, ns: BZGraphProcessor, asm: BZGraphProcessor}
+      data:
+        fromNode: 777079884584321024
+        fromPort: Flow-Out
+        toNode: 777079893178449920
+        toPort: Flow-In

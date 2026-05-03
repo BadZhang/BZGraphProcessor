@@ -1,0 +1,31 @@
+
+#if UNITY_EDITOR
+using UnityEditor;
+
+namespace BZGraphProcessor.Shared.UnityEditors
+{
+    public abstract class BaseEditor : UnityEditor.Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            EditorGUI.BeginChangeCheck();
+            SerializedProperty iterator = serializedObject.GetIterator();
+            
+            bool enterChildren = true;
+            while (iterator.NextVisible(enterChildren))
+            {
+                enterChildren = false;
+                EditorGUILayout.PropertyField(iterator, true);
+            }
+
+            if (EditorGUI.EndChangeCheck())
+                serializedObject.ApplyModifiedProperties();
+        }
+
+        protected virtual void OnPropertyGUI(SerializedProperty property)
+        {
+            EditorGUILayout.PropertyField(property);
+        }
+    }
+}
+#endif

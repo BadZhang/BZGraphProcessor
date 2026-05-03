@@ -1,0 +1,16 @@
+﻿using System;
+
+namespace BZGraphProcessor.Shared
+{
+    public abstract class GlobalEventBase : EventBase
+    {
+        public abstract Type EventType { get; }
+    }
+
+    public abstract class GlobalEventBase<T> : GlobalEventBase, IEvent<T>
+    {
+        public override Type EventType => TypeCache<T>.TYPE;
+
+        public abstract void Invoke(in T arg);
+    }
+}
