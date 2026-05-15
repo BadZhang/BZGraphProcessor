@@ -20,10 +20,10 @@ namespace BZGraphProcessor.Shared
 
     public class BlackboardProcessor<TKey> : IBlackboard<TKey>
     {
-        private Blackboard<TKey> m_Blackboard;
-        private EventStation<TKey> m_Events;
-        private List<KeyValuePair<TKey, Action<BBEventArg>>> m_AddObservers;
-        private List<KeyValuePair<TKey, Action<BBEventArg>>> m_RemoveObservers;
+        private readonly Blackboard<TKey> m_Blackboard;
+        private readonly EventStation<TKey> m_Events;
+        private readonly List<KeyValuePair<TKey, Action<BBEventArg>>> m_AddObservers;
+        private readonly List<KeyValuePair<TKey, Action<BBEventArg>>> m_RemoveObservers;
         private bool m_IsNotifying;
 
         public Blackboard<TKey> Blackboard

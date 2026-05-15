@@ -14,11 +14,11 @@ namespace BZGraphProcessor.Editor
     {
         private sealed class GraphClipboardData
         {
-            public readonly List<BaseNode> Nodes = new List<BaseNode>();
-            public readonly List<BaseConnection> Connections = new List<BaseConnection>();
-            public readonly List<Group> Groups = new List<Group>();
-            public readonly List<StickyNote> Notes = new List<StickyNote>();
-            public readonly List<PlacematData> Placemats = new List<PlacematData>();
+            public readonly List<BaseNode> Nodes = new();
+            public readonly List<BaseConnection> Connections = new();
+            public readonly List<Group> Groups = new();
+            public readonly List<StickyNote> Notes = new();
+            public readonly List<PlacematData> Placemats = new();
             public InternalVector2Int Anchor;
 
             public bool HasData => Nodes.Count > 0 || Notes.Count > 0 || Groups.Count > 0 || Placemats.Count > 0;
@@ -34,7 +34,7 @@ namespace BZGraphProcessor.Editor
 
         private static GraphClipboardData s_Clipboard;
         private static int s_PasteSerial;
-        private readonly List<BasePortView> m_CompatibilityPreviewPorts = new List<BasePortView>(32);
+        private readonly List<BasePortView> m_CompatibilityPreviewPorts = new(32);
         private BasePortView m_CompatibilityPreviewSource;
 
         protected virtual void OnCreated()

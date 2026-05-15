@@ -7,8 +7,8 @@ namespace BZGraphProcessor
     [ViewModel(typeof(BaseNode))]
     public class BaseNodeProcessor : ViewModel, IGraphElementProcessor, IGraphElementProcessor_Scope
     {
-        private BaseNode m_Data;
-        private Type m_DataType;
+        private readonly BaseNode m_Data;
+        private readonly Type m_DataType;
         private string m_Title;
         private string m_Tooltip;
         private InternalColor m_TitleColor;

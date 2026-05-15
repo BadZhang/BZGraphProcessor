@@ -10,7 +10,7 @@ namespace BZGraphProcessor
     public class MoveElementsCommand : ICommand
     {
         private Dictionary<IGraphElementProcessor_Scope, Rect> oldPos;
-        private Dictionary<IGraphElementProcessor_Scope, Rect> newPos;
+        private readonly Dictionary<IGraphElementProcessor_Scope, Rect> newPos;
 
         public MoveElementsCommand(Dictionary<IGraphElementProcessor_Scope, Rect> newPos)
         {
@@ -90,10 +90,10 @@ namespace BZGraphProcessor
 
     public class RemoveElementsCommand : ICommand
     {
-        private BaseGraphProcessor graph;
-        private List<IGraphElementProcessor> graphElements;
-        private HashSet<IGraphElementProcessor> graphElementsSet = new HashSet<IGraphElementProcessor>();
-        private Dictionary<BaseNodeProcessor, GroupProcessor> nodeGroups = new Dictionary<BaseNodeProcessor, GroupProcessor>();
+        private readonly BaseGraphProcessor graph;
+        private readonly List<IGraphElementProcessor> graphElements;
+        private readonly HashSet<IGraphElementProcessor> graphElementsSet = new();
+        private readonly Dictionary<BaseNodeProcessor, GroupProcessor> nodeGroups = new();
 
         public RemoveElementsCommand(BaseGraphProcessor graph, IGraphElementProcessor[] graphElements)
         {
@@ -239,8 +239,8 @@ namespace BZGraphProcessor
 
     public class AddNodeCommand : ICommand
     {
-        BaseGraphProcessor graph;
-        BaseNodeProcessor nodeVM;
+        readonly BaseGraphProcessor graph;
+        readonly BaseNodeProcessor nodeVM;
 
         public AddNodeCommand(BaseGraphProcessor graph, Type nodeType, InternalVector2Int position)
         {
@@ -311,9 +311,9 @@ namespace BZGraphProcessor
 
     public class AddToGroupCommand : ICommand
     {
-        private BaseGraphProcessor graph;
-        private GroupProcessor group;
-        private BaseNodeProcessor[] nodes;
+        private readonly BaseGraphProcessor graph;
+        private readonly GroupProcessor group;
+        private readonly BaseNodeProcessor[] nodes;
 
         public AddToGroupCommand(BaseGraphProcessor graph, GroupProcessor group, BaseNodeProcessor[] nodes)
         {
@@ -346,9 +346,9 @@ namespace BZGraphProcessor
 
     public class RemoveFromGroupCommand : ICommand
     {
-        private BaseGraphProcessor graph;
-        private GroupProcessor group;
-        private BaseNodeProcessor[] nodes;
+        private readonly BaseGraphProcessor graph;
+        private readonly GroupProcessor group;
+        private readonly BaseNodeProcessor[] nodes;
 
         public RemoveFromGroupCommand(BaseGraphProcessor graph, GroupProcessor group, BaseNodeProcessor[] nodes)
         {
@@ -446,8 +446,8 @@ namespace BZGraphProcessor
 
     public class AddPortCommand : ICommand
     {
-        BaseNodeProcessor node;
-        PortProcessor port;
+        readonly BaseNodeProcessor node;
+        readonly PortProcessor port;
         bool successed = false;
 
         public AddPortCommand(BaseNodeProcessor node, string name, BasePort.Direction direction, BasePort.Capacity capacity, Type type = null)
@@ -484,8 +484,8 @@ namespace BZGraphProcessor
 
     public class RemovePortCommand : ICommand
     {
-        BaseNodeProcessor node;
-        PortProcessor port;
+        readonly BaseNodeProcessor node;
+        readonly PortProcessor port;
         bool successed = false;
 
         public RemovePortCommand(BaseNodeProcessor node, PortProcessor port)
@@ -530,10 +530,10 @@ namespace BZGraphProcessor
     {
         private readonly BaseGraphProcessor graph;
 
-        PortProcessor from;
-        PortProcessor to;
-        BaseConnectionProcessor connectionVM;
-        HashSet<BaseConnectionProcessor> replacedConnections = new HashSet<BaseConnectionProcessor>();
+        readonly PortProcessor from;
+        readonly PortProcessor to;
+        readonly BaseConnectionProcessor connectionVM;
+        readonly HashSet<BaseConnectionProcessor> replacedConnections = new();
         bool connected;
 
         public BaseConnectionProcessor Connection
@@ -622,7 +622,7 @@ namespace BZGraphProcessor
         private readonly PortProcessor newTo;
 
         private BaseConnectionProcessor newConnection;
-        private readonly HashSet<BaseConnectionProcessor> replacedConnections = new HashSet<BaseConnectionProcessor>();
+        private readonly HashSet<BaseConnectionProcessor> replacedConnections = new();
         private readonly bool valid;
 
         public ReconnectCommand(BaseGraphProcessor graph, BaseConnectionProcessor oldConnection, PortProcessor newFrom, PortProcessor newTo)

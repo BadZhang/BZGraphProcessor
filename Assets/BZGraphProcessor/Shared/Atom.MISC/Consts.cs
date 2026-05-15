@@ -4,6 +4,6 @@ namespace BZGraphProcessor.Shared
 {
     public static class Consts
     {
-        public static readonly Random DefaultRandom = new Random();
+        public static readonly Random DefaultRandom = new();
     }
 }

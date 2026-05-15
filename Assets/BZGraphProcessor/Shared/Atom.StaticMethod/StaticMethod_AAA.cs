@@ -8,8 +8,8 @@ namespace BZGraphProcessor.Shared
     /// </summary>
     public class StaticMethod<A, B, C> : IStaticMethod
     {
-        private MethodInfo m_Method;
-        private object[] m_Arguments;
+        private readonly MethodInfo m_Method;
+        private readonly object[] m_Arguments;
 
         public StaticMethod(Assembly assembly, string typeName, string methodName)
         {

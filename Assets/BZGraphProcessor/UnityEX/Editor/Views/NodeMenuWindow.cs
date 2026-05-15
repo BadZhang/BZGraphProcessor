@@ -98,11 +98,11 @@ namespace BZGraphProcessor.Editor
         
         private string treeName;
         private BaseGraphView graphView;
-        public List<INodeEntry> entries = new List<INodeEntry>(256);
+        public List<INodeEntry> entries = new(256);
 
         private Func<INodeEntry, bool> filter;
         private Func<BaseNodeProcessor, bool> onNodeCreated;
-        private static readonly Dictionary<string, int> s_UsageTick = new Dictionary<string, int>(256);
+        private static readonly Dictionary<string, int> s_UsageTick = new(256);
         private static int s_Tick;
 
         public void Initialize(string treeName, BaseGraphView graphView)

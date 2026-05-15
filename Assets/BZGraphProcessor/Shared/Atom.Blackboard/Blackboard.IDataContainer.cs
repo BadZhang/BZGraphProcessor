@@ -36,7 +36,7 @@ namespace BZGraphProcessor.Shared
 
         private class DataContainer<TValue> : IDataContainer, IDataContainer<TValue>
         {
-            private Dictionary<TKey, TValue> m_Data = new Dictionary<TKey, TValue>();
+            private readonly Dictionary<TKey, TValue> m_Data = new();
 
             object IDataContainer.Get(TKey key)
             {

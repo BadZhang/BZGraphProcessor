@@ -24,11 +24,11 @@ namespace BZGraphProcessor.Shared
 {
     public sealed class CommandDispatcher
     {
-        private object m_Lock = new object();
-        private LinkedList<ICommand> m_UndoList = new LinkedList<ICommand>();
-        private Stack<ICommand> m_RedoList = new Stack<ICommand>();
+        private readonly object m_Lock = new();
+        private readonly LinkedList<ICommand> m_UndoList = new();
+        private readonly Stack<ICommand> m_RedoList = new();
         private CommandGroup m_CurrentGroup;
-        private int m_RecordLimit;
+        private readonly int m_RecordLimit;
 
         public CommandDispatcher(int recordLimit = 0)
         {
@@ -165,7 +165,7 @@ namespace BZGraphProcessor.Shared
 
         internal class CommandGroup : ICommand
         {
-            internal List<ICommand> m_Commands = new List<ICommand>();
+            internal List<ICommand> m_Commands = new();
 
             public void Do()
             {
@@ -206,9 +206,9 @@ namespace BZGraphProcessor.Shared
 
         public class ActionCommand : ICommand
         {
-            private Action m_Do;
-            private Action m_Redo;
-            private Action m_Undo;
+            private readonly Action m_Do;
+            private readonly Action m_Redo;
+            private readonly Action m_Undo;
 
             public ActionCommand(Action @do, Action @redo, Action @undo)
             {

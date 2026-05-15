@@ -179,7 +179,7 @@ namespace BZGraphProcessor.Shared.Collections
 
         /// <summary>返回循环访问集合的枚举数。</summary>
         /// <returns>循环访问集合的枚举数。</returns>
-        public LinkedList<T>.Enumerator GetEnumerator() => new LinkedList<T>.Enumerator(this.m_LinkedList);
+        public LinkedList<T>.Enumerator GetEnumerator() => new(this.m_LinkedList);
 
         private LinkedListNode<T> AcquireNode(T value)
         {

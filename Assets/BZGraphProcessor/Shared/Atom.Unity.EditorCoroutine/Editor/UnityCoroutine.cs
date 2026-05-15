@@ -10,8 +10,8 @@ namespace BZGraphProcessor.Shared.UnityEditors.EditorCoroutine
 {
     public class EditorCoroutine : ICoroutine, IYield
     {
-        IEnumerator enumerator;
-        Dictionary<int, IYield> cache = new Dictionary<int, IYield>();
+        readonly IEnumerator enumerator;
+        readonly Dictionary<int, IYield> cache = new();
 
         public bool IsRunning { get; private set; } = true;
         public double TimeSinceStartup { get; private set; }

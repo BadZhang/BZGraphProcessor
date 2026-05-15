@@ -6,8 +6,8 @@ namespace BZGraphProcessor.Shared
 {
     public sealed class AssetStation : IAssetLoader
     {
-        private IAssetLoader m_Loader;
-        private List<HandleBase> m_AssetHandles;
+        private readonly IAssetLoader m_Loader;
+        private readonly List<HandleBase> m_AssetHandles;
 
         public AssetStation(IAssetLoader loader)
         {

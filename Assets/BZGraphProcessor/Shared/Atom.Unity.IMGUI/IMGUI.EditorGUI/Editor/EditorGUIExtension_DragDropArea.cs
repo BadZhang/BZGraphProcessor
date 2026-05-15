@@ -8,7 +8,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
     public static partial class EditorGUIExtension
     {
         static readonly DragAndDropVisualMode DropVisualMode = DragAndDropVisualMode.Copy;
-        static readonly Color DragDropHighlightColor = new Color(0f, 1f, 1f, 0.3f);
+        static readonly Color DragDropHighlightColor = new(0f, 1f, 1f, 0.3f);
 
         /// <summary> 绘制一个可接收拖拽资源的区域 </summary>
         public static Object[] DragDropAreaMulti(Rect position)

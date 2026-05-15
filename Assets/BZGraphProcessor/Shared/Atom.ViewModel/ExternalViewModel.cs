@@ -9,7 +9,7 @@ namespace BZGraphProcessor.Shared
 
     public class ExternalViewModel
     {
-        private readonly Dictionary<string, IBindableProperty> m_BindableProperties = new Dictionary<string, IBindableProperty>();
+        private readonly Dictionary<string, IBindableProperty> m_BindableProperties = new();
         public event Action<object, string> PropertyChanged;
 
         public IReadOnlyDictionary<string, IBindableProperty> Properties

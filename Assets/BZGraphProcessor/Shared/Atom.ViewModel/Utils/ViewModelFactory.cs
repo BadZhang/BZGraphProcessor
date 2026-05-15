@@ -139,7 +139,7 @@ namespace BZGraphProcessor.Shared
     {
         public Type ViewModelType => typeof(T);
 
-        public T Produce() => new T();
+        public T Produce() => new();
 
         object IViewModelProducer.Produce() => Produce();
     }

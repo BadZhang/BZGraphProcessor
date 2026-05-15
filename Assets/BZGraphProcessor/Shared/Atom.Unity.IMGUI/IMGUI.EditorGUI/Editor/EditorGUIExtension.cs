@@ -12,7 +12,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
     {
         private static readonly int FoldoutHash = "Foldout".GetHashCode();
 
-        static Stack<Font> fonts = new Stack<Font>();
+        static readonly Stack<Font> fonts = new();
         public static void BeginFont(Font _font)
         {
             fonts.Push(GUI.skin.font);
@@ -24,7 +24,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
             GUI.skin.font = fonts.Pop();
         }
 
-        static Stack<Color> colors = new Stack<Color>();
+        static readonly Stack<Color> colors = new();
         public static void BeginColor(Color _color)
         {
             colors.Push(GUI.color);
@@ -48,7 +48,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
             EndColor();
         }
 
-        static Stack<Matrix4x4> matrixs = new Stack<Matrix4x4>();
+        static readonly Stack<Matrix4x4> matrixs = new();
         public static void BeginMatrix(Matrix4x4 matrix4X4)
         {
             matrixs.Push(GUI.matrix);
@@ -88,7 +88,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
             EndMatrix();
         }
 
-        static Stack<Color> backgroundColors = new Stack<Color>();
+        static readonly Stack<Color> backgroundColors = new();
         public static void BeginBackgroundColor(Color _color)
         {
             backgroundColors.Push(_color);

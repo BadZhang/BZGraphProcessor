@@ -5,7 +5,7 @@ namespace BZGraphProcessor.Shared
 {
     public static partial class ObjectPoolManager
     {
-        private static Dictionary<int, IObjectPool> s_ObjectPools;
+        private static readonly Dictionary<int, IObjectPool> s_ObjectPools;
 
         static ObjectPoolManager()
         {

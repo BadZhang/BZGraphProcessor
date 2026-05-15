@@ -34,21 +34,21 @@ namespace BZGraphProcessor
             this.z = z;
         }
 
-        private static readonly InternalVector3Int zeroVector = new InternalVector3Int(0, 0, 0);
+        private static readonly InternalVector3Int zeroVector = new(0, 0, 0);
 
-        private static readonly InternalVector3Int oneVector = new InternalVector3Int(1, 1, 1);
+        private static readonly InternalVector3Int oneVector = new(1, 1, 1);
 
-        private static readonly InternalVector3Int upVector = new InternalVector3Int(0, 1, 0);
+        private static readonly InternalVector3Int upVector = new(0, 1, 0);
 
-        private static readonly InternalVector3Int downVector = new InternalVector3Int(0, -1, 0);
+        private static readonly InternalVector3Int downVector = new(0, -1, 0);
 
-        private static readonly InternalVector3Int leftVector = new InternalVector3Int(-1, 0, 0);
+        private static readonly InternalVector3Int leftVector = new(-1, 0, 0);
 
-        private static readonly InternalVector3Int rightVector = new InternalVector3Int(1, 0, 0);
+        private static readonly InternalVector3Int rightVector = new(1, 0, 0);
 
-        private static readonly InternalVector3Int forwardVector = new InternalVector3Int(0, 0, 1);
+        private static readonly InternalVector3Int forwardVector = new(0, 0, 1);
 
-        private static readonly InternalVector3Int backVector = new InternalVector3Int(0, 0, -1);
+        private static readonly InternalVector3Int backVector = new(0, 0, -1);
 
         public static InternalVector3Int zero => zeroVector;
 

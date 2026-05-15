@@ -5,7 +5,7 @@ namespace BZGraphProcessor
 {
     public sealed class GraphValidationResult
     {
-        private readonly List<string> m_Messages = new List<string>(16);
+        private readonly List<string> m_Messages = new(16);
 
         public IReadOnlyList<string> Messages => m_Messages;
         public bool HasIssues => m_Messages.Count > 0;

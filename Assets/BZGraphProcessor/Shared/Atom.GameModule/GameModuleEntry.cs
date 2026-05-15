@@ -5,9 +5,9 @@ namespace BZGraphProcessor.Shared
 {
     public static class GameModuleEntry
     {
-        private static readonly List<IGameModule> s_GameModules = new List<IGameModule>();
-        private static readonly Dictionary<string, IGameModule> s_GameModulesByName = new Dictionary<string, IGameModule>();
-        private static readonly Dictionary<IGameModule, string> s_GameModuleNames = new Dictionary<IGameModule, string>();
+        private static readonly List<IGameModule> s_GameModules = new();
+        private static readonly Dictionary<string, IGameModule> s_GameModulesByName = new();
+        private static readonly Dictionary<IGameModule, string> s_GameModuleNames = new();
 
         public static IGameModule GetGameModule(string name)
         {

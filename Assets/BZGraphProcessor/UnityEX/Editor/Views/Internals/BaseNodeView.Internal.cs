@@ -27,11 +27,11 @@ namespace BZGraphProcessor.Editor
         public readonly VisualElement horizontalDivider;
         public readonly VisualElement verticalDivider;
 
-        private List<IconBadge> badges = new List<IconBadge>();
-        private Dictionary<string, BasePortView> portViews = new Dictionary<string, BasePortView>();
+        private readonly List<IconBadge> badges = new();
+        private readonly Dictionary<string, BasePortView> portViews = new();
         // Shift+Click BFS 遍历复用集合，避免每次 new 造成 GC 压力
-        private readonly HashSet<BaseNodeView> m_BfsVisited = new HashSet<BaseNodeView>();
-        private readonly Queue<BaseNodeView> m_BfsQueue = new Queue<BaseNodeView>();
+        private readonly HashSet<BaseNodeView> m_BfsVisited = new();
+        private readonly Queue<BaseNodeView> m_BfsQueue = new();
 
         #endregion
 

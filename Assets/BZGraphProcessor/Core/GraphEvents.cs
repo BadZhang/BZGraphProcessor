@@ -5,7 +5,7 @@ namespace BZGraphProcessor
 {
     public sealed class GraphEvents
     {
-        private EventStation<Type> m_EventStation = new EventStation<Type>();
+        private readonly EventStation<Type> m_EventStation = new();
 
         public bool HasEvent<TArg>() where TArg : struct, IGraphEvent
         {

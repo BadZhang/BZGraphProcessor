@@ -6,7 +6,7 @@ namespace BZGraphProcessor.Editor
 {
     public static class GraphProcessorEditorStyles
     {
-        public static Styles DefaultStyles { get; private set; } = new Styles()
+        public static Styles DefaultStyles { get; private set; } = new()
         {
             GraphWindowTree = Resources.Load<VisualTreeAsset>("GraphProcessor/UXML/GraphWindow"),
 

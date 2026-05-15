@@ -27,10 +27,10 @@ namespace BZGraphProcessor.Editor
 {
     public class BetterEdgeControl : EdgeControl
     {
-        private Edge edgeView;
+        private readonly Edge edgeView;
         private bool pointsChanged;
         private Rect range;
-        private List<Vector2> points = new List<Vector2>();
+        private readonly List<Vector2> points = new();
 
         public BetterEdgeControl(Edge connectionView)
         {
@@ -191,8 +191,8 @@ namespace BZGraphProcessor.Editor
         #region Static
 
         // RenderPointsDirtyField 已移除（未使用，避免无效反射调用）
-        static FieldInfo RenderPointsField;
-        static PropertyInfo LayoutProperty;
+        static readonly FieldInfo RenderPointsField;
+        static readonly PropertyInfo LayoutProperty;
 
         static BetterEdgeControl()
         {

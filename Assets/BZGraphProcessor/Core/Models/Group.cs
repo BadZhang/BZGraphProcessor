@@ -12,7 +12,7 @@ namespace BZGraphProcessor
         public string groupName;
         public InternalVector2Int position;
         public InternalVector2Int size;
-        public InternalColor backgroundColor = new InternalColor(0.3f, 0.3f, 0.3f, 0.3f);
-        public List<long> nodes = new List<long>();
+        public InternalColor backgroundColor = new(0.3f, 0.3f, 0.3f, 0.3f);
+        public List<long> nodes = new();
     }
 }

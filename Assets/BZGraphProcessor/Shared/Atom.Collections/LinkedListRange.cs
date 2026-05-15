@@ -61,7 +61,7 @@ namespace BZGraphProcessor.Shared.Collections
 
         /// <summary>返回循环访问集合的枚举数。</summary>
         /// <returns>循环访问集合的枚举数。</returns>
-        public LinkedListRange<T>.Enumerator GetEnumerator() => new LinkedListRange<T>.Enumerator(this);
+        public LinkedListRange<T>.Enumerator GetEnumerator() => new(this);
 
         /// <summary>返回循环访问集合的枚举数。</summary>
         /// <returns>循环访问集合的枚举数。</returns>

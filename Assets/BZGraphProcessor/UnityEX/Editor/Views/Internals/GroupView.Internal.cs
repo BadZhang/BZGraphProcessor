@@ -19,7 +19,7 @@ namespace BZGraphProcessor.Editor
         public TextField TitleField { get; private set; }
         public ColorField BackgroudColorField { get; private set; }
         public Label TitleLabel { get; private set; }
-        public GroupProcessor ViewModel { get; protected set; }
+        public GroupProcessor ViewModel { get; private set; }
         public IGraphElementProcessor V => ViewModel;
         public BaseGraphView Owner { get; private set; }
 

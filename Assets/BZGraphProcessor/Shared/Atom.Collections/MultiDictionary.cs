@@ -132,7 +132,7 @@ namespace BZGraphProcessor.Shared.Collections
 
         /// <summary>返回循环访问集合的枚举数。</summary>
         /// <returns>循环访问集合的枚举数。</returns>
-        public MultiDictionary<TKey, TValue>.Enumerator GetEnumerator() => new MultiDictionary<TKey, TValue>.Enumerator(this.m_Dictionary);
+        public MultiDictionary<TKey, TValue>.Enumerator GetEnumerator() => new(this.m_Dictionary);
 
         IEnumerator<KeyValuePair<TKey, LinkedListRange<TValue>>> IEnumerable<KeyValuePair<TKey, LinkedListRange<TValue>>>.GetEnumerator() => (IEnumerator<KeyValuePair<TKey, LinkedListRange<TValue>>>)this.GetEnumerator();
 

@@ -28,9 +28,9 @@ namespace BZGraphProcessor.Editor
 {
     public class BetterGridBackground : GridBackground
     {
-        private static CustomStyleProperty<Color> s_CenterLineColorProperty = new CustomStyleProperty<Color>("--center-line-color");
+        private static readonly CustomStyleProperty<Color> s_CenterLineColorProperty = new("--center-line-color");
 
-        private static readonly Color s_DefaultCenterLineColor = new Color(0f, 0.91f, 1f);
+        private static readonly Color s_DefaultCenterLineColor = new(0f, 0.91f, 1f);
 
         private Color m_CenterLineColor = BetterGridBackground.s_DefaultCenterLineColor;
         private Color centerLineColor => this.m_CenterLineColor;

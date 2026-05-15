@@ -15,17 +15,17 @@ namespace BZGraphProcessor
             this.y = y;
         }
 
-        private static readonly InternalVector2Int zeroVector = new InternalVector2Int(0, 0);
+        private static readonly InternalVector2Int zeroVector = new(0, 0);
 
-        private static readonly InternalVector2Int oneVector = new InternalVector2Int(1, 1);
+        private static readonly InternalVector2Int oneVector = new(1, 1);
 
-        private static readonly InternalVector2Int upVector = new InternalVector2Int(0, 1);
+        private static readonly InternalVector2Int upVector = new(0, 1);
 
-        private static readonly InternalVector2Int downVector = new InternalVector2Int(0, -1);
+        private static readonly InternalVector2Int downVector = new(0, -1);
 
-        private static readonly InternalVector2Int leftVector = new InternalVector2Int(-1, 0);
+        private static readonly InternalVector2Int leftVector = new(-1, 0);
 
-        private static readonly InternalVector2Int rightVector = new InternalVector2Int(1, 0);
+        private static readonly InternalVector2Int rightVector = new(1, 0);
 
         public static InternalVector2Int zero => zeroVector;
 

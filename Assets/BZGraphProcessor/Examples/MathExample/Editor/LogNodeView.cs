@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 [CustomView(typeof(LogNode))]
 public class LogNodeView : BaseNodeView
 {
-    Button btnDebug;
+    readonly Button btnDebug;
 
     public LogNodeView() : base()
     {

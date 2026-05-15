@@ -10,32 +10,32 @@ namespace BZGraphProcessor
         /// <summary>
         /// Graph数据
         /// </summary>
-        private BaseGraph m_Model;
+        private readonly BaseGraph m_Model;
         
         /// <summary>
         /// Graph数据Type
         /// </summary>
-        private Type m_ModelType;
+        private readonly Type m_ModelType;
         
         /// <summary>
         /// Graph的操作事件
         /// </summary>
-        private GraphEvents m_GraphEvents;
+        private readonly GraphEvents m_GraphEvents;
 
         /// <summary>
         /// 自定义事件
         /// </summary>
-        private EventStation<string> m_Events;
+        private readonly EventStation<string> m_Events;
         
         /// <summary>
         /// 黑板
         /// </summary>
-        private BlackboardProcessor<string> m_Blackboard;
+        private readonly BlackboardProcessor<string> m_Blackboard;
 
         /// <summary>
         /// 图加载/修复诊断信息
         /// </summary>
-        private List<string> m_Diagnostics;
+        private readonly List<string> m_Diagnostics;
 
         public BaseGraphProcessor(BaseGraph model)
         {

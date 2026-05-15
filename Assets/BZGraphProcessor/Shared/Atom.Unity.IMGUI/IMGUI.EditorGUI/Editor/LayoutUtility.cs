@@ -10,11 +10,11 @@ namespace BZGraphProcessor.Shared.UnityEditors
 {
     public class LayoutUtility
     {
-        private static MethodInfo _miLoadWindowLayout;
-        private static MethodInfo _miSaveWindowLayout;
-        private static MethodInfo _miReloadWindowLayoutMenu;
+        private static readonly MethodInfo _miLoadWindowLayout;
+        private static readonly MethodInfo _miSaveWindowLayout;
+        private static readonly MethodInfo _miReloadWindowLayoutMenu;
 
-        private static bool _available;
+        private static readonly bool _available;
 
         static LayoutUtility()
         {

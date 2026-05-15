@@ -13,16 +13,16 @@ namespace BZGraphProcessor.Editor
         
         public class ChildChangedEvent : EventBase<ChildChangedEvent>
         {
-            public ChildChangedType type;
-            public VisualElement target;
+            public ChildChangedType Type;
+            public VisualElement Target;
         }
 
         public new void Add(VisualElement child)
         {
             base.Add(child);
             var evt = ChildChangedEvent.GetPooled();
-            evt.type = ChildChangedType.Added;
-            evt.target = child;
+            evt.Type = ChildChangedType.Added;
+            evt.Target = child;
             this.SendEvent(evt);
         }
 
@@ -30,8 +30,8 @@ namespace BZGraphProcessor.Editor
         {
             base.Remove(child);
             var evt = ChildChangedEvent.GetPooled();
-            evt.type = ChildChangedType.Removed;
-            evt.target = child;
+            evt.Type = ChildChangedType.Removed;
+            evt.Target = child;
             this.SendEvent(evt);
         }
     }

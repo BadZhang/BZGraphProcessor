@@ -7,7 +7,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
 {
     public class EditorPrefsVariable<T>
     {
-        private string key;
+        private readonly string key;
         private T value;
         public event Action<T> onValueChanged;
 

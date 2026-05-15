@@ -15,7 +15,7 @@ namespace BZGraphProcessor.Shared.UnityEditors.EditorCoroutine
         }
         
         private static GlobalEditorCoroutineSetting s_Settings;
-        private static EditorCoroutineService s_CoroutineService =   new EditorCoroutineService();
+        private static readonly EditorCoroutineService s_CoroutineService =   new();
 
         static GlobalEditorCoroutineSetting Settings
         {

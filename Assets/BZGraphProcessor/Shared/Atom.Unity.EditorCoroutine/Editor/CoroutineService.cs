@@ -6,7 +6,7 @@ namespace BZGraphProcessor.Shared.UnityEditors.EditorCoroutine
 {
     public abstract class CoroutineService<T> where T : class, ICoroutine
     {
-        protected readonly Queue<T> coroutineQueue = new Queue<T>();
+        protected readonly Queue<T> coroutineQueue = new();
 
         public void Update()
         {

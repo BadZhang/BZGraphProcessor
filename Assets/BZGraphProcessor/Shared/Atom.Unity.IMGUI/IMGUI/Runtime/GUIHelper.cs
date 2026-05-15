@@ -9,7 +9,7 @@ namespace BZGraphProcessor.Shared
         #region GUIContent
         public class GUIContentPool
         {
-            Dictionary<string, GUIContent> GUIContentsCache = new Dictionary<string, GUIContent>();
+            readonly Dictionary<string, GUIContent> GUIContentsCache = new();
 
             public GUIContent TextContent(string name)
             {
@@ -54,7 +54,7 @@ namespace BZGraphProcessor.Shared
             }
         }
 
-        static GUIContentPool ContentPool = new GUIContentPool();
+        static readonly GUIContentPool ContentPool = new();
 
         public static GUIContent TextContent(string name)
         {
@@ -89,7 +89,7 @@ namespace BZGraphProcessor.Shared
 
         public class ContextDataCache
         {
-            Dictionary<string, IContextData> ContextDatas = new Dictionary<string, IContextData>();
+            readonly Dictionary<string, IContextData> ContextDatas = new();
 
             public bool ContainsContextData(string key)
             {
@@ -132,7 +132,7 @@ namespace BZGraphProcessor.Shared
             }
         }
 
-        static ContextDataCache ContextDatas = new ContextDataCache();
+        static readonly ContextDataCache ContextDatas = new();
 
         public static bool ContainsContextData(string key)
         {

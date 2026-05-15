@@ -20,7 +20,7 @@ namespace BZGraphProcessor.Shared
     {
         [NonSerialized] private object _syncRoot;
 
-        private IBridgedValue<T> m_BridgedItems;
+        private readonly IBridgedValue<T> m_BridgedItems;
 
         protected IBridgedValue<T> BridgedItems => this.m_BridgedItems;
 

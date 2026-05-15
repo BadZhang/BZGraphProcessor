@@ -5,7 +5,7 @@ using BZGraphProcessor.Shared;
 [NodeMenu("Sub")]
 public class SubNode : BaseNode
 {
-    public List<string> ports = new List<string>();
+    public List<string> ports = new();
 }
 
 [ViewModel(typeof(SubNode))]

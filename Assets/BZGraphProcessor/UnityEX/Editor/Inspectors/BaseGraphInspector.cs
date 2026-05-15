@@ -9,7 +9,7 @@ namespace BZGraphProcessor.Editor
     [CustomObjectEditor(typeof(BaseGraphView))]
     public class BaseGraphInspector : ObjectEditor
     {
-        static GUIHelper.ContextDataCache ContextDataCache = new GUIHelper.ContextDataCache();
+        static readonly GUIHelper.ContextDataCache ContextDataCache = new();
 
         protected PropertyTree propertyTree;
 

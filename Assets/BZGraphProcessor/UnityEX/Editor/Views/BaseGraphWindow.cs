@@ -39,8 +39,8 @@ namespace BZGraphProcessor.Editor
         private Button blackboardSetButton;
         private Button blackboardRemoveButton;
         private ListView blackboardList;
-        private readonly List<KeyValuePair<string, object>> blackboardEntries = new List<KeyValuePair<string, object>>(64);
-        private readonly List<IGraphAsset> subgraphBreadcrumbStack = new List<IGraphAsset>(8);
+        private readonly List<KeyValuePair<string, object>> blackboardEntries = new(64);
+        private readonly List<IGraphAsset> subgraphBreadcrumbStack = new(8);
         private VisualElement breadcrumbContainer;
         private Label breadcrumbPath;
         private Label diagnosticBadge;
@@ -764,7 +764,7 @@ namespace BZGraphProcessor.Editor
                 var pair = blackboardEntries[index];
                 label.text = $"{pair.Key} = {pair.Value}";
             };
-            blackboardList.onSelectionChange += _ =>
+            blackboardList.selectionChanged += _ =>
             {
                 var idx = blackboardList.selectedIndex;
                 if (idx < 0 || idx >= blackboardEntries.Count)

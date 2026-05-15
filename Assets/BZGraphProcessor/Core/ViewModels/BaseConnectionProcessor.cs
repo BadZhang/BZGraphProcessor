@@ -10,12 +10,12 @@ namespace BZGraphProcessor
         /// <summary>
         /// 数据
         /// </summary>
-        private BaseConnection m_Model; 
+        private readonly BaseConnection m_Model; 
         
         /// <summary>
         /// 数据类型
         /// </summary>
-        private Type m_ModelType;
+        private readonly Type m_ModelType;
 
         /// <summary>
         /// 所在Graph
@@ -149,10 +149,10 @@ namespace BZGraphProcessor
 
     public class ConnectionProcessorHorizontalComparer : IComparer<BaseConnectionProcessor>
     {
-        public static readonly ConnectionProcessorHorizontalComparer FromPortSortDefault = new ConnectionProcessorHorizontalComparer(ConnectionSortMode.OutPort);
-        public static readonly ConnectionProcessorHorizontalComparer ToPortSortDefault = new ConnectionProcessorHorizontalComparer(ConnectionSortMode.InPort);
+        public static readonly ConnectionProcessorHorizontalComparer FromPortSortDefault = new(ConnectionSortMode.OutPort);
+        public static readonly ConnectionProcessorHorizontalComparer ToPortSortDefault = new(ConnectionSortMode.InPort);
 
-        private ConnectionSortMode m_mode;
+        private readonly ConnectionSortMode m_mode;
 
         public ConnectionProcessorHorizontalComparer(ConnectionSortMode mode)
         {
@@ -186,10 +186,10 @@ namespace BZGraphProcessor
 
     public class ConnectionProcessorVerticalComparer : IComparer<BaseConnectionProcessor>
     {
-        public static readonly ConnectionProcessorVerticalComparer InPortSortDefault = new ConnectionProcessorVerticalComparer(ConnectionSortMode.InPort);
-        public static readonly ConnectionProcessorVerticalComparer OutPortSortDefault = new ConnectionProcessorVerticalComparer(ConnectionSortMode.OutPort);
+        public static readonly ConnectionProcessorVerticalComparer InPortSortDefault = new(ConnectionSortMode.InPort);
+        public static readonly ConnectionProcessorVerticalComparer OutPortSortDefault = new(ConnectionSortMode.OutPort);
 
-        private ConnectionSortMode m_mode;
+        private readonly ConnectionSortMode m_mode;
 
         public ConnectionProcessorVerticalComparer(ConnectionSortMode mode)
         {

@@ -13,7 +13,7 @@ namespace BZGraphProcessor.Shared.UnityEditors
     {
         public class ObjectPreviewPopupWindow : PopupWindowContent
         {
-            UnityEditor.Editor editor;
+            readonly UnityEditor.Editor editor;
             UnityObject unityObject;
             Vector2 scroll;
             public ObjectPreviewPopupWindow(UnityObject _unityObject)

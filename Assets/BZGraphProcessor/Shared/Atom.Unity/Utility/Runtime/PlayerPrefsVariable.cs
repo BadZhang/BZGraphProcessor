@@ -6,7 +6,7 @@ namespace BZGraphProcessor.Shared
 {
     public class PlayerPrefsVariable<T>
     {
-        private string key;
+        private readonly string key;
         private bool initialized;
         private T value;
         public event Action<T> onValueChanged;

@@ -10,13 +10,13 @@ namespace BZGraphProcessor
     {
         #region Fields
 
-        private BasePort m_Model;
-        private Type m_ModelType;
+        private readonly BasePort m_Model;
+        private readonly Type m_ModelType;
         private bool m_HideLabel;
 
         private BaseNodeProcessor m_Owner;
 
-        internal List<BaseConnectionProcessor> m_Connections = new List<BaseConnectionProcessor>();
+        internal List<BaseConnectionProcessor> m_Connections = new();
         [ThreadStatic]
         private static HashSet<string> s_EvaluationStack;
         [ThreadStatic]

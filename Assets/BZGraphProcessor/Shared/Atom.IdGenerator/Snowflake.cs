@@ -71,10 +71,10 @@ namespace BZGraphProcessor.Shared
         /// </summary>
         private const long MAX_TIMESTAMP = 0x1FFFFFFFFFF;
 
-        /// <summary>
-        /// 预分配的异常消息，避免字符串分配
-        /// </summary>
-        private static readonly string CLOCK_BACKWARDS_MESSAGE = "Clock moved backwards. Refusing to generate id for {0} ticks";
+        // /// <summary>
+        // /// 预分配的异常消息，避免字符串分配
+        // /// </summary>
+        // private static readonly string CLOCK_BACKWARDS_MESSAGE = "Clock moved backwards. Refusing to generate id for {0} ticks";
 
         #endregion
 
@@ -111,7 +111,7 @@ namespace BZGraphProcessor.Shared
         /// <summary>
         /// 自旋锁，替代对象锁
         /// </summary>
-        private SpinLock m_SpinLock = new SpinLock();
+        private SpinLock m_SpinLock = new();
 
         /// <summary>
         /// snowflake算法
@@ -259,7 +259,7 @@ namespace BZGraphProcessor.Shared
 
     public partial class Snowflake
     {
-        public static readonly Snowflake BaseUtc2020 = new Snowflake(0, new UtcMSDateTimeProvider(2020, 1, 1));
+        public static readonly Snowflake BaseUtc2020 = new(0, new UtcMSDateTimeProvider(2020, 1, 1));
 
         /// <summary>
         /// 原始时间提供者，保持向后兼容

@@ -25,8 +25,8 @@ namespace BZGraphProcessor
     public static class GraphProcessorUtil
     {
         private static bool s_Initialized;
-        private static Dictionary<Type, NodeStaticInfo> s_NodeStaticInfos = new Dictionary<Type, NodeStaticInfo>();
-        private static Snowflake s_IDGenerator = new Snowflake(0, new Snowflake.UtcMSDateTimeProvider(2020, 1, 1));
+        private static Dictionary<Type, NodeStaticInfo> s_NodeStaticInfos = new();
+        private static readonly Snowflake s_IDGenerator = new(0, new Snowflake.UtcMSDateTimeProvider(2020, 1, 1));
 
         static GraphProcessorUtil()
         {

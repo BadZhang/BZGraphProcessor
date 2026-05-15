@@ -4,7 +4,7 @@ namespace BZGraphProcessor.Shared
 {
     public sealed class EventQueueStation
     {
-        private Queue<QueueEventBase> m_EventQueue = new  Queue<QueueEventBase>();
+        private readonly Queue<QueueEventBase> m_EventQueue = new();
 
         public void Update()
         {

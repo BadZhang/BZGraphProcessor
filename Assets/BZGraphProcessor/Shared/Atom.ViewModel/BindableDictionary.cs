@@ -7,8 +7,8 @@ namespace BZGraphProcessor.Shared
 {
     public partial class BindableDictionary<TKey, TValue>
     {
-        private SimpleMonitor _monitor = new SimpleMonitor();
-        private IBridgedValue<Dictionary<TKey, TValue>> m_BridgedDictionary;
+        private readonly SimpleMonitor _monitor = new();
+        private readonly IBridgedValue<Dictionary<TKey, TValue>> m_BridgedDictionary;
 
         [field: NonSerialized] public event Action<BindableDictionaryChanged> DictionaryChanged;
         [field: NonSerialized] public event Action CountChanged;
@@ -181,7 +181,7 @@ namespace BZGraphProcessor.Shared
 
     public partial class BindableDictionary<TKey, TValue> : IBindableProperty, IBindableProperty<Dictionary<TKey, TValue>>
     {
-        private BindableProperty<Dictionary<TKey, TValue>> m_BindableProperty;
+        private readonly BindableProperty<Dictionary<TKey, TValue>> m_BindableProperty;
 
         public event Action<object, object> BoxedValueChanged
         {

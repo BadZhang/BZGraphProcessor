@@ -29,7 +29,7 @@ namespace BZGraphProcessor.Shared.UnityEditors.IMGUI.Controls
 
         public const float DefaultSideWdith = 10;
 
-        public static readonly Dictionary<UIDirection, int> DirectionIndexMap = new Dictionary<UIDirection, int>
+        public static readonly Dictionary<UIDirection, int> DirectionIndexMap = new()
         {
             { UIDirection.None, -1 },
             { UIDirection.Left, 0 },

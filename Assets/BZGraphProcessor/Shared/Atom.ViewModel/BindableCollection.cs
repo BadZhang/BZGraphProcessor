@@ -12,7 +12,7 @@ namespace BZGraphProcessor.Shared
 {
     public partial class BindableCollection<T, TE> : BridgedCollection<T, TE> where T : IList<TE>, new()
     {
-        private SimpleMonitor _monitor = new SimpleMonitor();
+        private readonly SimpleMonitor _monitor = new();
 
         [field: NonSerialized] public event NotifyCollectionChangedEventHandler CollectionChanged;
         [field: NonSerialized] public event Action CountChanged;
@@ -135,7 +135,7 @@ namespace BZGraphProcessor.Shared
 
     public partial class BindableCollection<T, TE> : IBindableProperty, IBindableProperty<T>
     {
-        private BindableProperty<T> bindableProperty;
+        private readonly BindableProperty<T> bindableProperty;
 
         public event Action<object, object> BoxedValueChanged
         {

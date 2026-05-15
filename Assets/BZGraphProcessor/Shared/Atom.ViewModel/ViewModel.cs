@@ -16,7 +16,7 @@ namespace BZGraphProcessor.Shared
             public T newValue;
         }
 
-        private EventStation<string> m_ValueChangedEvents = new EventStation<string>();
+        private readonly EventStation<string> m_ValueChangedEvents = new();
         
         public event PropertyChangedEventHandler PropertyChanged;
 

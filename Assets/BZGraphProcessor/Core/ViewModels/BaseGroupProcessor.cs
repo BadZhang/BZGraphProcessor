@@ -9,8 +9,8 @@ namespace BZGraphProcessor
     {
         #region Fileds
 
-        private Group m_Model;
-        private Type m_ModelType;
+        private readonly Group m_Model;
+        private readonly Type m_ModelType;
 
         private BaseGraphProcessor m_Owner;
 

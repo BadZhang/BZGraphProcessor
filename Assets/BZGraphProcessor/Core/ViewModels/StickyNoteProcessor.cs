@@ -6,8 +6,8 @@ namespace BZGraphProcessor
     [ViewModel(typeof(StickyNote))]
     public sealed class StickyNoteProcessor : ViewModel, IGraphElementProcessor, IGraphElementProcessor_Scope
     {
-        private StickyNote m_Model;
-        private Type m_ModelType;
+        private readonly StickyNote m_Model;
+        private readonly Type m_ModelType;
 
         public StickyNoteProcessor(StickyNote model)
         {

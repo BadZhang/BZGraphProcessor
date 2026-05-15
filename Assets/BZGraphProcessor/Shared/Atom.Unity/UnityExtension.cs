@@ -6,7 +6,7 @@ namespace BZGraphProcessor.Shared
 {
     public static class UnityExtension
     {
-        private static readonly List<Transform> s_CachedTransforms = new List<Transform>();
+        private static readonly List<Transform> s_CachedTransforms = new();
 
         /// <summary>
         /// 获取或增加组件。

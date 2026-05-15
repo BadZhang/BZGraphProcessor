@@ -16,7 +16,7 @@ namespace BZGraphProcessor.Shared
         private string m_FullName;
         private IDataNode m_Parent;
         private object m_Data;
-        private Dictionary<string, IDataNode> m_Children = new Dictionary<string, IDataNode>();
+        private readonly Dictionary<string, IDataNode> m_Children = new();
 
         public string Name => m_Name;
 

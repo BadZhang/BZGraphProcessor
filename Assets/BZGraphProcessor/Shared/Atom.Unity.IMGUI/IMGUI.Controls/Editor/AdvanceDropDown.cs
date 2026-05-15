@@ -41,7 +41,7 @@ namespace BZGraphProcessor.Shared.UnityEditors.IMGUI.Controls
     {
         const string DEFAULT_ROOT_NAME = "Root";
 
-        private string rootName;
+        private readonly string rootName;
         private AdvancedDropdownItem root;
         
         public event Action<AdvancedDropdownItem> onItemSelected;

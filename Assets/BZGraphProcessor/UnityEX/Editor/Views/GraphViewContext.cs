@@ -42,7 +42,7 @@ namespace BZGraphProcessor.Editor
 
         public sealed class FrameCommands : ICommand
         {
-            public List<ICommand> commands = new List<ICommand>();
+            public List<ICommand> commands = new();
 
             public void RegisterCommand(ICommand command)
             {

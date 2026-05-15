@@ -5,8 +5,8 @@ namespace BZGraphProcessor.Shared
 {
     public partial class Blackboard<TKey> : IBlackboard<TKey>
     {
-        private Dictionary<Type, object> m_Containers = new Dictionary<Type, object>();
-        private Dictionary<TKey, object> m_ContainerMap = new Dictionary<TKey, object>();
+        private readonly Dictionary<Type, object> m_Containers = new();
+        private readonly Dictionary<TKey, object> m_ContainerMap = new();
 
         public object Get(TKey key)
         {

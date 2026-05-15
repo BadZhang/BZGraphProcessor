@@ -169,9 +169,9 @@ namespace BZGraphProcessor.Shared.UnityEditors.IMGUI.Controls
     public abstract class TreeView : UnityTreeView
     {
         private TreeViewItem root;
-        private TreeViewItemPool itemPool;
-        private bool sharedItemPool;
-        private Dictionary<int, TreeViewItem> itemMap = new Dictionary<int, TreeViewItem>();
+        private readonly TreeViewItemPool itemPool;
+        private readonly bool sharedItemPool;
+        private readonly Dictionary<int, TreeViewItem> itemMap = new();
 
         public float RowHeight
         {

@@ -76,8 +76,8 @@ namespace BZGraphProcessor
 
     public class Groups
     {
-        private Dictionary<long, GroupProcessor> m_GroupMap = new Dictionary<long, GroupProcessor>();
-        private Dictionary<long, GroupProcessor> m_NodeGroupMap = new Dictionary<long, GroupProcessor>();
+        private readonly Dictionary<long, GroupProcessor> m_GroupMap = new();
+        private readonly Dictionary<long, GroupProcessor> m_NodeGroupMap = new();
 
         public IReadOnlyDictionary<long, GroupProcessor> GroupMap
         {

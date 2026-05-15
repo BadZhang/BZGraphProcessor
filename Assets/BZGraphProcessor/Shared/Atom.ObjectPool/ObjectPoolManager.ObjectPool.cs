@@ -7,7 +7,7 @@ namespace BZGraphProcessor.Shared
     {
         private sealed class ObjectPool<T> : IObjectPool<T> where T : class, new()
         {
-            private Queue<T> m_CachedObjects;
+            private readonly Queue<T> m_CachedObjects;
 
             public Type ObjectType
             {
