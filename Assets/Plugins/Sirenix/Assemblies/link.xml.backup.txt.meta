@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1bec01331befdea4d9ed9033eabd68f8
+guid: c50ef42a99911214c8dcf626c266b4dd
 timeCreated: 1613046886
 TextScriptImporter:
   userData: 
@@ -9,6 +9,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 89041
   packageName: Odin Inspector and Serializer
-  packageVersion: 4.0.1.0
+  packageVersion: 4.0.2.0
   assetPath: Assets/Plugins/Sirenix/Assemblies/link.xml
-  uploadId: 827678
+  uploadId: 925668

@@ -1092,9 +1092,20 @@ namespace BZGraphProcessor.Editor
 
         /// <summary> 双击资源 </summary>
         [OnOpenAsset(0)]
-        public static bool OnOpen(int instanceID, int line)
+#if UNITY_6000_2_OR_NEWER
+        private static bool OnOpen(EntityId entityId, int line)
         {
-            UnityObject go = EditorUtility.InstanceIDToObject(instanceID);
+            return OnOpenAsset(EditorUtility.EntityIdToObject(entityId), line);
+        }
+#else
+        private static bool OnOpen(int instanceID, int line)
+        {
+            return OnOpenAsset(EditorUtility.InstanceIDToObject(instanceID), line);
+        }
+#endif
+
+        private static bool OnOpenAsset(UnityObject go, int line)
+        {
             if (go == null)
                 return false;
             IGraphAsset graphAsset = go as IGraphAsset;

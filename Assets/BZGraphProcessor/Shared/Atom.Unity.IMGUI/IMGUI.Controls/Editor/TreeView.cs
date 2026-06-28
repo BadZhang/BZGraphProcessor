@@ -7,8 +7,16 @@ using BZGraphProcessor.Shared;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
+
+#if UNITY_6000_2_OR_NEWER
+using UnityTreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
+using UnityTreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
+#else
 using UnityTreeView = UnityEditor.IMGUI.Controls.TreeView;
 using UnityTreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem;
+#endif
+
 
 namespace BZGraphProcessor.Shared.UnityEditors.IMGUI.Controls
 {
